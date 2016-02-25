@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="peopleModule">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <input placeholder="name" type="text" class="form-control" id="nameInput">
+            </div>
+            <div class="col-sm-4">
+              <input placeholder="age" type="text" class="form-control" id="ageInput">
+            </div>
+            <div class="col-sm-4">
+              <input placeholder="position" type="text" class="form-control" id="positionInput">
+            </div>
+            <button id="addPerson" class="btn btn-success btn-raised pull-right">Add Person</button>
+          </div>
+        </div>
+        <div class="people-container row">
+          <script id="people-template" type="text/template">
+            {{#people}}
+              <div class="col-sm-4">
+                <div class="thumbnail">
+                  <i class="glyphicon glyphicon-remove pull-right del text-danger"></i>
+                  <div class="caption">
+                    <h3>{{ name }} - <span class="text-muted">{{ age }}</span></h3>
+                    <p class="text-muted">{{ position }}</p>
+                  </div>
+                </div>
+              </div>
+            {{/people}}
+          </script>
+        </div>
+      </div>
+      <div class="hero-unit" id="statsModule"></div>
+      <script id="stats-template" type="text/template">
+        <h2>Stats</h2>
+        <strong>people: {{people}}</strong>
+      </script>
+    </div>
+
+
+
+    <!-- <div id="peopleModule">
+      <h1>People</h1>
+      <input placeholder="name" type="text">
+      <button id="addPerson" class="btn btn-success btn-raised">Add Person</button>
+      <ul id="people">
+        <script id="people-template" type="text/template">
+          {{#people}}
+            <li>
+              <span>{{.}}</span>
+              <i class="del">X</i>
+            </li>
+          {{/people}}
+        </script>
+      </ul>
+
+    </div> -->
+
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/js/material.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.7/js/ripples.min.js"></script>
+  <script src="./javascript/people.js"></script>
+</html>
